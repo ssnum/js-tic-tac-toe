@@ -1,19 +1,20 @@
-// Event listener for reset button
-resetButton.addEventListener('click', resetGame);
-
-let spaces = Array(9).fill(null); // Array to track game state (empty cells)
-
 const X_MARKER = "X"; // Constant for X marker
 const O_MARKER = "O"; // Constant for O marker
 
 let currentPlayer = X_MARKER; // Variable to track current player
+let cells = Array.from(document.getElementsByClassName('box')); // Array of all game cells
 
 let gameTitle = document.getElementById('gameTitle'); // Title of the game
 let resetButton = document.getElementById('resetButton'); // Restart button
-let cells = Array.from(document.getElementsByClassName('box')); // Array of all game cells
-
 
 let winnerColor = getComputedStyle(document.body).getPropertyValue('--winning-blocks'); // Color for winning cells
+
+let spaces = Array(9).fill(null); // Array to track game state (empty cells)
+
+// Function to start the game
+const startGame = () => {
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick)); // Add event listeners to cells
+}
 
 const winningCombinations = [
     [0,1,2],
@@ -38,17 +39,11 @@ function checkWinner() {
     return false; // Return false if no winner
 }
 
-// Function to start the game
-const startGame = () => {
-    cells.forEach(cell => cell.addEventListener('click', handleCellClick)); // Add event listeners to cells
-}
-
 // Event handler for cell clicks
 function handleCellClick(e) {
     const id = e.target.id.substring(4); // Get cell ID
 
     if(!spaces[id]){
-        
         spaces[id] = currentPlayer; // Update game state with current player's marker
         e.target.innerText = currentPlayer; // Update cell text with current player's marker
 
@@ -64,11 +59,9 @@ function handleCellClick(e) {
     }
 }
 
-
 // Function to reset the game
 function resetGame() {
     spaces.fill(null); // Reset game state
-    
     cells.forEach( cell => {
         cell.innerText = ''; // Clear cell text
         cell.style.backgroundColor=''; // Reset cell background color
@@ -80,3 +73,6 @@ function resetGame() {
 }
 
 startGame(); // Start the game
+
+// Event listener for reset button
+resetButton.addEventListener('click', resetGame);
