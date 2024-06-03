@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game
 
-This is a simple web-based Tic-Tac-Toe game created using HTML, CSS, and JavaScript that I built as a learning project for HTML, CSS, and Javascript. The game allows two players to take turns marking the cells in a 3x3 grid with their respective markers (X or O). The first player to get three of their markers in a row, column, or diagonal wins the game.
+This is a simple web-based Tic-Tac-Toe game that I built as a learning project for HTML, CSS, and Javascript. The game allows two players to take turns marking the cells in a 3x3 grid with their respective markers (X or O). The first player to get three of their markers in a row, column, or diagonal wins the game.
 
 ## Features
 
