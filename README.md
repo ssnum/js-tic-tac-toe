@@ -10,11 +10,10 @@ This is a simple web-based Tic-Tac-Toe game created using HTML, CSS, and JavaScr
 
 ## How to Play
 
-1. Open the `index.html` file in your web browser.
-2. Click on a cell in the game board to place your marker (X or O).
-3. The game will automatically switch turns between Player 1 (X) and Player 2 (O).
-4. Continue taking turns until one player wins or the game ends in a draw.
-5. Click the "Restart" button to start a new game.
+1. Click on a cell in the game board to place your marker (X or O).
+2. The game will automatically switch turns between Player 1 (X) and Player 2 (O).
+3. Continue taking turns until one player wins or the game ends in a draw.
+4. Click the "Restart" button to start a new game.
 
 ## Customization
 
